@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Averia+Serif+Libre:wght@300&display=swap');
+* {
+    margin: 0px;
+    border: 0px;
+    padding: 0px;
+    font-family: 'Averia Serif Libre', cursive;
+}
+
+body {
+	background-image: url("file:///C:/Users/Gabbs/Desktop/atv17/fundohd.jpg");
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+} 
+
+.cadastrar { 
+    
+    width:500px; 
+    margin: 200px;
+    overflow:hidden;
+    background:#ffffffc5; 
+    font-family:'open_sanslight'; 
+    border-radius:5px;  
+    padding:10px 20px 20px 20px; 
+    position:relative; 
+    padding-bottom:80px; 
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.781); 
+    
+}
+
+.cadastrar .title { 
+    font-family: 'Averia Serif Libre', cursive;
+    color:purple; 
+    font-size: 5em;
+    text-align:center; 
+    font-weight:bold; 
+    margin:10px 0 30px 0; 
+    border-bottom:1px solid rgb(255, 255, 255); 
+    padding-bottom:20px; 
+
+}
+
+.cadastrar input { 
+
+    font-family:'open_sanslight'; 
+    font-size:1em; 
+    display:block; 
+    padding:15px 10px; 
+    margin-bottom: 10px; 
+    width:80%; 
+    border:1px solid #ddd; 
+    transition: border-width 0.2s ease; 
+    border-radius:50px; 
+    color:grey; 
+
+}
+
+
+.cadastrar input:focus { 
+
+    outline: none; 
+    color:purple; 
+    border-color: purple; 
+    border-left-width:45px; 
+}
+
+.cadastrar button { 
+
+    width:100%; 
+    height:100%; 
+    padding:10px 10px; 
+    background: purple; 
+    color: #fff; 
+    font-size:1.5em; 
+    display: block; 
+    border:none; 
+    cursor:pointer; 
+    margin-top:20px; 
+    position: absolute; 
+    left:0; 
+    bottom:0; 
+    max-height:60px; 
+    border:0px solid rgba(0, 0, 0, 0.1); 
+    border-radius: 0 0 2px 2px; transform: rotateZ(0deg); 
+    transition: all 0.1s ease-out; 
+    border-bottom-width: 7px; 
+}
+
+.cadastrar button:active { background-color:#4c4c4c; color:#ffffff; }
+
