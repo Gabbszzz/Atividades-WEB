@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="author" content="Kodinger">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>My Login Page</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/my-login.css">
+</head>
+
+<body class="my-login-page">
+	<section class="h-100">
+		<div class="container">
+			<div class="row justify-content-center h-100">
+				<div class="card-wrapper">
+					<div class="brand">
+						<img src="totvs.jpg" alt="logo">
+					</div>
+					<div class="card fat">
+						<div class="card-body">
+                            
+							<div class="padding">
+                                <h2 class="title">Seja bem vindo,</h2>
+							<form method="POST" class="my-login-validation" novalidate="">
+								<div class="form-group">
+									<label for="email">Usuário</label>
+									<input id="email" type="email" class="form-control" name="email" value="" required autofocus>
+									<div class="invalid-feedback">
+									</div>
+								</div>
+
+								<div class="form-group">
+									<label for="password">Senha
+										<a href="forgot.html" class="float-right">
+											
+										</a>
+									</label>
+									<input id="password" type="password" class="form-control" name="password" required data-eye>
+								    <div class="invalid-feedback">
+								    	Password is required
+							    	</div>
+								</div>
+
+								<p class="link">
+                                    
+                                  <a href="cadastro.html">Esqueci minha senha</a>
+                              </p>
+
+                              <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                                <button type="button" class="btn btn-primary" disabled>Entrar</button>
+
+                              </div>
+								</div>
+							</form>
+					
+		</div>
+	</section>
+
+</body>
+</html>
+<style>
+
+body {
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+} 
+
+.title { 
+    
+    color: rgba(181, 180, 180, 0.76);
+    font-size: 1em;
+    text-align:left; 
+    font-weight:bold; 
+    margin:10px 0 30px 0; 
+    border-bottom:1px solid rgb(255, 255, 255); 
+    padding-bottom:20px; 
+
+}
+    .card {
+    position: relative;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 10px solid rgba(19, 155, 209, 0.761);
+    border-radius: 0.25rem;
+}
+
+.login { 
+    
+    width:300px; 
+    margin: 200px;
+    overflow:hidden;
+    background:#ffffff9a; 
+    font-family:'open_sanslight'; 
+    border-radius:5px;  
+    padding:10px 20px 20px 20px; 
+    position:relative;  
+}
+
+.login input {
+    outline:invert;
+  }
+
+  input:not([type="checkbox"]){
+    font-family:'open_sanslight'; 
+    font-size:1em; 
+    display:block; 
+    padding:15px 10px; 
+    margin-bottom:20px; 
+    width:84%; 
+    border:1px solid #ddd; 
+    transition: border-width 0.1s ease; 
+    border-radius:5px; 
+    color:grey;  
+    
+  }
+
+
+
+
+
+</style>

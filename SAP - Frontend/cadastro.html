@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <link rel="stylesheet" type="text/css" href="cadastro.css">
+	<title> pagina cadastro </title>  
+
+</head>
+<body>  
+
+        <form class="cadastrar" method="post" name="cadastrar">
+                              
+        <div class="padding">
+        <h2 class="title">Dados de cadastro</h2></div>
+        
+        <div class="input">
+         Nome:  
+        <input class="req" required oninput="validarNome()" type="name" name="name" id="email" autofocus/> </div>  
+        <span class="span-req"> Por favor, forneça ao menos 2 caracteres.</span>
+
+        <div class="input">
+         
+         Sobrenome:  
+         <input class="req" required oninput="validarSBNome()" type="name" name="name" id="email" autofocus/> </div> 
+        <span class="span-req"> Por favor, forneça ao menos 2 caracteres.</span>
+
+        <div class="input">
+        
+        Email:
+        <input class="req" required oninput="validarEmail()" type="email" name="email" id="email" >
+         <span class="span-req"> Por favor, forneça um endereço de email válido.</span>
+        </div>
+
+        <main class="login">
+         <div class="input">
+            
+        Login:  
+        <input class="req" required oninput="validarLogin()" type="name" name="name" id="email" autofocus/> </div>  
+        <span class="span-req"> Por favor, forneça ao menos 4 caracteres.</span>
+
+        <div class="input">
+         
+         Senha:  
+        <input class="req" required oninput="validarSenha()" type="password" name="senha" id="password" >
+         <span class="span-req"> Por favor, forneça ao menos 6 caracteres</span>    
+        </div>
+
+
+        <div class="input">
+            Confirmação de senha:
+            <input class="req" required oninput="validarConfirmarSenha()" type="password" name="Repita a senha" id="password" >
+             <span .required:after class="span-req">Por favor, forneça o mesmo valor novamente.</span> 
+        </div></main>
+
+        
+    </div>
+</form>
+    
+</body>
+<script type="text/javascript">
+    const form = document.getElementById('form');
+    const inputs = document.querySelectorAll('.req');
+    const spans = document.querySelectorAll('.span-req');
+    const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+
+    function setError(index){
+        spans[index].style.display = 'block';
+        
+    }
+
+    function removeError(index){
+        spans[index].style.display = '';
+        
+    }
+
+    form.addEventListener( 'submit', (event) => {
+        event.preventDefault();
+        validarNome();
+        validarSBNome();
+        validarEmail();
+        validarLogin();
+        validarSenha();
+        validarConfirmarSenha();
+    })
+
+    function validarNome(){
+        if(inputs[0].value.length < 2){
+            setError(0);
+        }else{
+            removeError(0);
+        }
+    }
+
+    function validarSBNome(){
+        if(inputs[1].value.length < 2){
+            setError(1);
+        }else{
+            removeError(1);
+        }
+    }
+
+     function validarEmail(){
+            if(emailRegex.test(inputs[2].value)){
+                removeError(2);
+            }else{
+                setError(2);
+            }
+        }
+
+    function validarLogin(){
+        if(inputs[3].value.length < 4){
+            setError(3);
+        }else{
+            removeError(3);
+        }
+    }
+
+    function validarSenha(){
+        if(inputs[4].value.length < 6){
+            setError(4);
+        }else{
+            removeError(4);
+            validarConfirmarSenha();
+        }
+    }
+
+    function validarConfirmarSenha(){
+        if(inputs[5].value == inputs[4].value){
+            removeError(5);
+        }else{
+            setError(5);
+        }
+    }
+    
+</script>
+
+</html>
+
+<style>
+    
+
+body {
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+} 
+
+.cadastrar { 
+    
+    width:500px; 
+    margin: 200px;
+    overflow:hidden;
+    background:#ffffffc5; 
+    font-family:'open_sanslight'; 
+    border-radius:5px;  
+    padding:10px 20px 20px 20px; 
+    position:relative; 
+    padding-bottom:80px; 
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.781); 
+    
+}
+
+.cadastrar .title { 
+    font-size: 2em;
+    text-align:left; 
+    font-weight:bold; 
+    margin:10px 0 30px 0; 
+    color:grey;
+    padding-bottom:20px; 
+
+}
+
+.cadastrar input { 
+
+    font-family:'open_sanslight'; 
+    font-size:1em; 
+    display:block; 
+    padding:15px 10px; 
+    margin-bottom: 10px; 
+    width:80%; 
+    border:1px solid #ddd; 
+    transition: border-width 0.2s ease; 
+    border-radius:5px; 
+    color:grey; 
+
+}
+main.login{
+            border-radius: 5px;
+            border: 1px solid whitesmoke;
+            padding: 5px;
+            background-color: whitesmoke;
+        }
+
+
+
+.span-req{
+    font-size: 13px;
+    display: none;
+    color:#f10707cc
+    
+
+}
+</style>
