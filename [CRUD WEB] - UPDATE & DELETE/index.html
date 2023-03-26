@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="cadastro.css">
+    <link rel="stylesheet" href="style.css" type="text/css"/>
+
+	<title> pagina cadastro </title>  
+
+</head>
+<body>  
+
+    <form action="cliente/inserirCliente.jsp" class="cadastrar" method="post" name="cadastrar">
+                              
+        <div class="padding">
+        <h2 class="title">Dados de cadastro</h2></div>
+        
+        <div class="input">
+         Nome:  
+        <input class="req" required oninput="validarNome()" type="name" name="name" id="email" autofocus/> </div>  
+        <span class="span-req"> Por favor, forneça ao menos 2 caracteres.</span>
+
+        <div class="input">
+         
+        
+        Email:
+        <input class="req" required oninput="validarEmail()" type="email" name="email" id="email" >
+         <span class="span-req"> Por favor, forneça um endereço de email válido.</span>
+        </div>
+
+        <main class="login">
+         <div class="input">
+            
+         
+         Senha:  
+        <input class="req" required oninput="validarSenha()" type="password" name="senha" id="password" >
+         <span class="span-req"> Por favor, forneça ao menos 6 caracteres</span>    
+        </div>
+
+
+      
+    </div>
+    <button type="submit">cadastrar</button>
+    
+</form>
+    
+</body>
+<script type="text/javascript">
+    const form = document.getElementById('form');
+    const inputs = document.querySelectorAll('.req');
+    const spans = document.querySelectorAll('.span-req');
+    const emailRegex = /^[a-z0-9.]+@[a-z0-9]+\.[a-z]+\.([a-z]+)?$/i;
+
+    function setError(index){
+        spans[index].style.display = 'block';
+        
+    }
+
+    function removeError(index){
+        spans[index].style.display = '';
+        
+    }
+
+
+    function validarNome(){
+        if(inputs[0].value.length < 2){
+            setError(0);
+        }else{
+            removeError(0);
+        }
+    }
+
+
+     function validarEmail(){
+            if(emailRegex.test(inputs[1].value)){
+               setError(1);
+            }else{
+                 removeError(1);
+            }
+        }
+
+
+    function validarSenha(){
+        if(inputs[2].value.length < 6){
+            setError(2);
+        }else{
+            removeError(2);
+        }
+    }
+ function refCad(){
+ setTimeout(function() {
+            window.location.href = "http://localhost:8080/AulaWeb/cliente/listarCliente.jsp?id=7&username=&email=&senha=#";
+        }, 5000); 
+    
+O 5000 é o valor em milisegundos!
+}
+
+    
+</script>
+
+
+
+<style>
+    
+
+body {
+  background-repeat:no-repeat;
+  background-size:cover;
+  min-width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+} 
+
+.cadastrar { 
+    
+    width:500px; 
+    margin: 200px;
+    overflow:hidden;
+    background:#ffffffc5; 
+    font-family:'open_sanslight'; 
+    border-radius:5px;  
+    padding:10px 20px 20px 20px; 
+    position:relative; 
+    padding-bottom:80px; 
+    box-shadow:0px 1px 5px rgba(0, 0, 0, 0.781); 
+    
+}
+
+.cadastrar .title { 
+    font-size: 2em;
+    text-align:left; 
+    font-weight:bold; 
+    margin:10px 0 30px 0; 
+    color:grey;
+    padding-bottom:20px; 
+
+}
+
+.cadastrar input { 
+
+    font-family:'open_sanslight'; 
+    font-size:1em; 
+    display:block; 
+    padding:15px 10px; 
+    margin-bottom: 10px; 
+    width:80%; 
+    border:1px solid #ddd; 
+    transition: border-width 0.2s ease; 
+    border-radius:5px; 
+    color:grey; 
+
+}
+main.login{
+            border-radius: 5px;
+            border: 1px solid whitesmoke;
+            padding: 5px;
+            background-color: whitesmoke;
+        }
+
+
+
+.span-req{
+    font-size: 13px;
+    display: none;
+    color:#f10707cc
+    
+
+}
+</style>
+</html>
